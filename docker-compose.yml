@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  database:
+    image: postgres:alpine
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: This1s_pr0jecT
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432

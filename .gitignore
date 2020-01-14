@@ -1,0 +1,9 @@
+# inside every folder
+**/node_modules/
+**/yarn-error.log
+
+# database data folder
+data/
+
+# environment file.
+**/.env

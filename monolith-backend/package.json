@@ -1,0 +1,26 @@
+{
+  "name": "monolith-backend",
+  "version": "1.0.0",
+  "description": "Monolithic achitecture backend",
+  "main": "index.js",
+  "author": "Ryan Willpower <surasak.c.work@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.16.0",
+    "@typescript-eslint/parser": "^2.16.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "nodemon": "^2.0.2",
+    "prettier": "^1.19.1",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.7.4"
+  },
+  "dependencies": {
+    "fastify": "^2.11.0"
+  }
+}
