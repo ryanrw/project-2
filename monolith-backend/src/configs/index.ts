@@ -18,4 +18,6 @@ export default {
   backendRootPath,
   projectPath,
   secret: process.env.SECRET,
+  hostname: process.env.HOSTNAME || `localhost`,
+  port: Number(process.env.PORT) || 4000,
 }

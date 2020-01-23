@@ -1,6 +1,6 @@
 import { ApolloServer, gql } from "apollo-server"
 
-import "./configs"
+import config from "./configs"
 
 const typeDefs = gql`
   type User {
@@ -31,9 +31,9 @@ const resolvers = {
 const server = new ApolloServer({ typeDefs, resolvers })
 
 export function startServer() {
-  require("./configs")
+  const { hostname, port } = config
 
-  server.listen().then(({ url }) => {
+  server.listen({ hostname, port }).then(({ url }) => {
     console.log(`server start at ${url}`)
   })
 }
