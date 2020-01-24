@@ -12,7 +12,7 @@ export default {
 
         return generateStatus(`success`)
       } catch (error) {
-        throw new ApolloError(error.message)
+        throw new ApolloError(error.message, error.code)
       }
     },
   },

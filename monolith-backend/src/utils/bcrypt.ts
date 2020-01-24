@@ -1,18 +1,27 @@
 import bcrypt from "bcrypt"
+import { CustomError } from "./error"
 
 const saltRound = 10
 
 export async function encrypt(password: string): Promise<string> {
-  const hash = await bcrypt.hash(password, saltRound)
+  try {
+    const hash = await bcrypt.hash(password, saltRound)
 
-  return hash
+    return hash
+  } catch (error) {
+    throw new CustomError({ message: error.message, code: `BcryptError` })
+  }
 }
 
 export async function compare(
   password: string,
   hash: string
 ): Promise<boolean> {
-  const isPasswordMatch = await bcrypt.compare(password, hash)
+  try {
+    const isPasswordMatch = await bcrypt.compare(password, hash)
 
-  return isPasswordMatch
+    return isPasswordMatch
+  } catch (error) {
+    throw new CustomError({ message: error.message, code: `BcryptError` })
+  }
 }
