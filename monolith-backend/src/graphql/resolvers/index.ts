@@ -2,6 +2,6 @@ import merge from "lodash.merge"
 
 import root from "./root"
 import createUser from "./users/create"
-import checkUser from "./users/check"
+import login from "./users/login"
 
-export const resolvers = merge({}, root, createUser, checkUser)
+export const resolvers = merge({}, root, createUser, login)
