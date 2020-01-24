@@ -1,32 +1,9 @@
-import { ApolloServer, gql } from "apollo-server"
+require("module-alias/register")
+import { ApolloServer } from "apollo-server"
 
-import config from "./configs"
-
-const typeDefs = gql`
-  type User {
-    userId: String!
-    username: String!
-    email: String!
-    password: String!
-  }
-
-  type Query {
-    getUser: User
-  }
-`
-
-const user = {
-  userId: "test",
-  username: "test",
-  email: "test",
-  password: "test",
-}
-
-const resolvers = {
-  Query: {
-    getUser: () => user,
-  },
-}
+import config from "@config"
+import { typeDefs } from "@typedef/"
+import { resolvers } from "@resolver/"
 
 const server = new ApolloServer({ typeDefs, resolvers })
 

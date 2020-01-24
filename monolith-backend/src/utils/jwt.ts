@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken"
 
-import config from "../configs"
+import config from "@config"
 
 interface Payload {
   userId: string
