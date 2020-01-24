@@ -16,5 +16,5 @@ export async function validate(option: ValidateUserOption) {
     })
   }
 
-  return isPasswordCorrect
+  return data
 }
