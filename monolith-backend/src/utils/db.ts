@@ -1,4 +1,5 @@
 import { Pool } from "pg"
+import { SelectOption } from "query-builder"
 
 export const database = new Pool()
 
@@ -8,6 +9,14 @@ class QueryBuilder {
     const prettiedData = this.addSpaceAndBackquote(column)
 
     return `INSERT INTO ${table}(${prettiedData}) VALUES (${parameter})`
+  }
+
+  select(option: SelectOption) {
+    const data = this.addSpaceAndBackquote(option.data)
+    const from = this.addSpaceAndBackquote(option.from)
+    const where = this.addSpaceAndBackquote(option.where)
+
+    return `SELECT ${data} FROM ${from} WHERE ${where}`
   }
 
   private getParametersFrom<T>(data: T[]) {
