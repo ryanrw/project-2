@@ -1,11 +1,6 @@
 import jwt from "jsonwebtoken"
-
 import config from "@config"
-
-interface Payload {
-  userId: string
-  username: string
-}
+import { Payload } from "jwt"
 
 export function generateJWT(payload: Payload) {
   const option: jwt.SignOptions = { expiresIn: "1h" }
