@@ -1,7 +1,11 @@
+// Utility and Helper
 import { CustomError } from "@utils/error"
-import { ValidateUserOption } from "users"
 import { compare } from "@utils/bcrypt"
 
+// Type and Interface
+import { ValidateUserOption } from "users"
+
+// Local import
 import { getUser } from "./get"
 
 export async function validate(option: ValidateUserOption) {

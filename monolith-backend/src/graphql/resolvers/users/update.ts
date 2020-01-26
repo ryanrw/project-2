@@ -1,8 +1,15 @@
+// Library
+import { ApolloError, AuthenticationError } from "apollo-server"
+
+// Service
 import { updateUserInfo, getUser as getNewUserInfo } from "@service/users"
+
+// Utility and Helper
+import { generateJWT } from "@utils/jwt"
+
+// Type and Interface
 import { UpdateUserOption } from "users"
 import { Payload } from "jwt"
-import { ApolloError, AuthenticationError } from "apollo-server"
-import { generateJWT } from "@utils/jwt"
 
 export default {
   Mutation: {

@@ -1,7 +1,14 @@
-import { validate } from "@service/users"
-import { ValidateUserOption } from "users"
+// Library
 import { ApolloError } from "apollo-server"
+
+// Service
+import { validate } from "@service/users"
+
+// Utility and Helper
 import { generateJWT } from "@utils/jwt"
+
+// Type and Interface
+import { ValidateUserOption } from "users"
 
 export default {
   Query: {

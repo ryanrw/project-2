@@ -1,3 +1,4 @@
+// Utility and Helper
 import createQuery, { database } from "@utils/db"
 import { CustomError } from "@utils/error"
 

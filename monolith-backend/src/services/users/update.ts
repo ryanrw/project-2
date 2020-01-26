@@ -1,6 +1,9 @@
-import createQuery, { database } from "@utils/db"
-import { UpdateUserOption } from "users"
+// Utility and Helper
 import { CustomError } from "@utils/error"
+import createQuery, { database } from "@utils/db"
+
+// Type and Interface
+import { UpdateUserOption } from "users"
 
 export async function updateUserInfo(
   updateUserid: string,

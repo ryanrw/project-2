@@ -1,4 +1,7 @@
+// Library
 import bcrypt from "bcrypt"
+
+// Local import
 import { CustomError } from "./error"
 
 const saltRound = 10

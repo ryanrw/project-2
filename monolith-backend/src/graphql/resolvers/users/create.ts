@@ -1,7 +1,12 @@
-import { User } from "users"
+// Library
+import { ApolloError } from "apollo-server"
+
+// Service
 import { createUser as create } from "@service/users/"
 import { generateStatus } from "@service/status/generate"
-import { ApolloError } from "apollo-server"
+
+// Type and Interface
+import { User } from "users"
 
 export default {
   Mutation: {

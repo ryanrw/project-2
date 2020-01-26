@@ -1,6 +1,9 @@
+// Utility and Helper
 import createQuery, { database } from "@utils/db"
-import { UserResultFromDatabase } from "users"
 import { CustomError } from "@utils/error"
+
+// Type and Interface
+import { UserResultFromDatabase } from "users"
 import { UserInfo } from "users"
 
 export async function getUser(user: UserInfo) {

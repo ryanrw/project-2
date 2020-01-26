@@ -1,8 +1,17 @@
+// One time called module
 require("module-alias/register")
-import { ApolloServer, AuthenticationError, ApolloError } from "apollo-server"
+
+// Library
+import { ApolloServer, ApolloError } from "apollo-server"
+
+// Configuration
 import config from "@config"
+
+// GraphQL
 import { typeDefs } from "@typedef/"
 import { resolvers } from "@resolver/"
+
+// Utility and Helper
 import { extractJWT } from "@utils/jwt"
 
 const server = new ApolloServer({

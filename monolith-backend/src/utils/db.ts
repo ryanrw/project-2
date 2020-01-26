@@ -1,4 +1,7 @@
+// Library
 import { Pool } from "pg"
+
+// Type and Interface
 import {
   SelectOption,
   UpdateOption,

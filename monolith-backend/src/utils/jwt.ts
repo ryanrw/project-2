@@ -1,6 +1,13 @@
+// Library
 import jwt from "jsonwebtoken"
+
+// Configuration
 import config from "@config"
+
+// Type and Interface
 import { Payload } from "jwt"
+
+// Local import
 import { CustomError } from "./error"
 
 export function generateJWT(payload: Payload) {

@@ -1,3 +1,4 @@
+// Type and Interface
 import { ErrorOption, ErrorCode } from "error"
 
 export class CustomError extends Error {

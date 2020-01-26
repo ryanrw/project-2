@@ -1,7 +1,12 @@
-import { deleteUser } from "@service/users"
-import { Payload } from "jwt"
+// Library
 import { AuthenticationError, ApolloError } from "apollo-server"
+
+// Service
+import { deleteUser } from "@service/users"
 import { generateStatus } from "@service/status/generate"
+
+// Type and Interface
+import { Payload } from "jwt"
 
 export default {
   Mutation: {

@@ -1,7 +1,10 @@
-import { User } from "users"
+// Utility and Helper
 import createQuery, { database } from "@utils/db"
 import { encrypt } from "@utils/bcrypt"
 import { CustomError } from "@utils/error"
+
+// Type and Interface
+import { User } from "users"
 
 export async function createUser(opt: User) {
   const encryptedPassword = await encrypt(opt.password)
