@@ -1,6 +1,5 @@
 import { User } from "users"
-
-import { createUser as create } from "@service/users/create"
+import { createUser as create } from "@service/users/"
 import { generateStatus } from "@service/status/generate"
 import { ApolloError } from "apollo-server"
 

@@ -1,4 +1,4 @@
-import { validate } from "@service/users/check"
+import { validate } from "@service/users"
 import { ValidateUserOption } from "users"
 import { ApolloError } from "apollo-server"
 import { generateJWT } from "@utils/jwt"

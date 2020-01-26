@@ -1,8 +1,7 @@
-import { updateUserInfo } from "@service/users/update"
+import { updateUserInfo, getUser as getNewUserInfo } from "@service/users"
 import { UpdateUserOption } from "users"
 import { Payload } from "jwt"
 import { ApolloError, AuthenticationError } from "apollo-server"
-import { getUser as getNewUserInfo } from "@service/users/get"
 import { generateJWT } from "@utils/jwt"
 
 export default {

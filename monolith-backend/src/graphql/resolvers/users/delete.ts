@@ -1,4 +1,4 @@
-import { deleteUser } from "@service/users/delete"
+import { deleteUser } from "@service/users"
 import { Payload } from "jwt"
 import { AuthenticationError, ApolloError } from "apollo-server"
 import { generateStatus } from "@service/status/generate"

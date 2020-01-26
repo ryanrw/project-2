@@ -1,5 +1,5 @@
 import createQuery, { database } from "@utils/db"
-import { UserResultFromDatabase, User } from "users"
+import { UserResultFromDatabase } from "users"
 import { CustomError } from "@utils/error"
 import { UserInfo } from "users"
 
