@@ -1,5 +1,5 @@
 require("module-alias/register")
-import { ApolloServer, AuthenticationError } from "apollo-server"
+import { ApolloServer, AuthenticationError, ApolloError } from "apollo-server"
 import config from "@config"
 import { typeDefs } from "@typedef/"
 import { resolvers } from "@resolver/"
@@ -9,17 +9,21 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   context: context => {
-    const authorization = context.req.headers.authorization || ""
+    try {
+      const authorization = context.req.headers.authorization || ""
 
-    if (authorization) {
-      const jwt = authorization.replace("Bearer ", "")
+      if (authorization) {
+        const jwt = authorization.replace("Bearer ", "")
 
-      const payload = extractJWT(jwt)
+        const payload = extractJWT(jwt)
 
-      return payload
+        return payload
+      }
+
+      return ""
+    } catch (error) {
+      throw new ApolloError(error.message, error.code)
     }
-
-    return ""
   },
 })
 
