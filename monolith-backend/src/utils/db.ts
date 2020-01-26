@@ -1,5 +1,10 @@
 import { Pool } from "pg"
-import { SelectOption, UpdateOption, GenericObject } from "query-builder"
+import {
+  SelectOption,
+  UpdateOption,
+  GenericObject,
+  DeleteOption,
+} from "query-builder"
 
 export const database = new Pool()
 
@@ -24,6 +29,10 @@ class QueryBuilder {
     const where = this.addSpaceAndBackquote(option.where)
 
     return `UPDATE ${option.table} SET ${set} WHERE ${where}`
+  }
+
+  delete(option: DeleteOption) {
+    return `DELETE FROM ${option.table} WHERE ${option.where}`
   }
 
   convertObjectToAssignment(option: GenericObject) {

@@ -11,3 +11,8 @@ export interface UpdateOption {
 }
 
 export type GenericObject = { [key: string]: any }
+
+export interface DeleteOption {
+  table: string
+  where: string[]
+}
