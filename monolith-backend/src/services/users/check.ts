@@ -5,7 +5,7 @@ import { compare } from "@utils/bcrypt"
 import { getUser } from "./get"
 
 export async function validate(option: ValidateUserOption) {
-  const data = await getUser(option.username)
+  const data = await getUser({ username: option.username })
 
   const isPasswordCorrect = await compare(option.password, data.password)
 

@@ -86,12 +86,12 @@ CREATE TABLE "public"."tool_skills" (
 
 -- Table Definition
 CREATE TABLE "public"."users" (
-    "user_id" uuid NOT NULL DEFAULT uuid_generate_v4(),
+    "userid" uuid NOT NULL DEFAULT uuid_generate_v4(),
     "username" varchar(32) NOT NULL,
     "email" varchar(64) NOT NULL,
     "password" varchar(64) NOT NULL,
     "create_at" timestamp DEFAULT now(),
-    PRIMARY KEY ("user_id")
+    PRIMARY KEY ("userid")
 );
 
-ALTER TABLE "public"."posts" ADD FOREIGN KEY ("post_by") REFERENCES "public"."users"("user_id");
+ALTER TABLE "public"."posts" ADD FOREIGN KEY ("post_by") REFERENCES "public"."users"("userid");

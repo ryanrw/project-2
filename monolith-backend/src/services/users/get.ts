@@ -1,14 +1,16 @@
 import createQuery, { database } from "@utils/db"
-import { UserResultFromDatabase } from "users"
+import { UserResultFromDatabase, User } from "users"
 import { CustomError } from "@utils/error"
+import { UserInfo } from "users"
 
-export async function getUser(username: string) {
+export async function getUser(user: UserInfo) {
+  const [_, whereAssignment] = createQuery.convertObjectToAssignment(user)
   const selectQuery = createQuery.select({
-    data: [`user_id`, `username`, `password`],
+    data: [`userid`, `email`, `username`, `password`],
     from: [`users`],
-    where: [`username=$1`],
+    where: whereAssignment,
   })
-  const value = [username]
+  const value = Object.values(user)
 
   const data = await database.query<UserResultFromDatabase>(selectQuery, value)
 
