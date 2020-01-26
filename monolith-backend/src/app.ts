@@ -2,7 +2,7 @@
 require("module-alias/register")
 
 // Library
-import { ApolloServer, ApolloError } from "apollo-server"
+import { ApolloServer } from "apollo-server"
 
 // Configuration
 import config from "@config"
@@ -12,28 +12,12 @@ import { typeDefs } from "@typedef/"
 import { resolvers } from "@resolver/"
 
 // Utility and Helper
-import { extractJWT } from "@utils/jwt"
+import { context } from "@utils/context"
 
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  context: context => {
-    try {
-      const authorization = context.req.headers.authorization || ""
-
-      if (authorization) {
-        const jwt = authorization.replace("Bearer ", "")
-
-        const payload = extractJWT(jwt)
-
-        return payload
-      }
-
-      return ""
-    } catch (error) {
-      throw new ApolloError(error.message, error.code)
-    }
-  },
+  context,
 })
 
 export function startServer() {
