@@ -1,10 +1,10 @@
 // Utility and Helper
 import { CustomError } from "@utils/error"
 import createQuery, { database } from "@utils/db"
+import { encrypt } from "@utils/bcrypt"
 
 // Type and Interface
 import { UpdateUserOption } from "users"
-import { encrypt } from "@utils/bcrypt"
 
 export async function updateUserInfo(
   updateUserid: string,
