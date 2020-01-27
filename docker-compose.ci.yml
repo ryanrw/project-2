@@ -25,7 +25,7 @@ services:
       PORT: 4000
       HOSTNAME: 0.0.0.0
       PGUSER: postgres
-      PGHOST: db
+      PGHOST: database
       PGPASSWORD: This1s_pr0jecT
       PGDATABASE: blog
       PGPORT: 5432
