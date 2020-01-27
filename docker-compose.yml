@@ -3,6 +3,7 @@ version: "3.7"
 services:
   database:
     build: ./monolith-db
+    container_name: monolith_database
     hostname: database
     restart: always
     environment:
@@ -14,6 +15,7 @@ services:
 
   api:
     build: ./monolith-backend
+    container_name: monolith_api
     hostname: api
     restart: always
     volumes:
