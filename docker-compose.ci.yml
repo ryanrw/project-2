@@ -1,0 +1,41 @@
+version: "3.7"
+
+services:
+  database:
+    build: ./monolith-db
+    container_name: monolith_database
+    hostname: database
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: This1s_pr0jecT
+    volumes:
+      - ./monolith-db/data:/var/lib/postgresql/data
+    ports:
+      - 2345:5432
+
+  api:
+    build: ./monolith-backend
+    container_name: monolith_api
+    hostname: api
+    restart: always
+    volumes:
+      - ./monolith-backend/src:/usr/app/src
+    environment:
+      WAIT_HOSTS: database:5432
+      PORT: 4000
+      HOSTNAME: 0.0.0.0
+      PGUSER: postgres
+      PGHOST: db
+      PGPASSWORD: This1s_pr0jecT
+      PGDATABASE: blog
+      PGPORT: 5432
+      SECRET: randomserial
+
+  nginx:
+    image: nginx:alpine
+    restart: always
+    volumes:
+      - ./monolith-nginx/conf.d:/etc/nginx/conf.d
+      - ./monolith-nginx/access.log:/var/log/nginx/monolith-blog.access.log
+    ports:
+      - 80:80
