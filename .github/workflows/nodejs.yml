@@ -20,4 +20,4 @@ jobs:
     - name: build docker compose
       run: docker-compose up -d
     - name: run test
-      run: docker exec monolith-api yarn test
+      run: docker exec monolith_api yarn jest --forceExit --detectOpenHandles --maxWorkers=10
