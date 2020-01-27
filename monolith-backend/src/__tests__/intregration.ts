@@ -18,8 +18,6 @@ describe(`Mutation`, () => {
       },
     })
 
-    console.log(response)
-
     expect(response.data.createUser.status).toBe(`success`)
   })
 })

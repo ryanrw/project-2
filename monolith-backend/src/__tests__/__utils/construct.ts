@@ -1,9 +1,6 @@
 // Library
 import { ApolloServer } from "apollo-server"
 
-// Configuration Loader
-import "@config"
-
 // GraphQL
 import { typeDefs } from "@typedef/"
 import { resolvers } from "@resolver/"
