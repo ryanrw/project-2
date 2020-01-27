@@ -5,6 +5,7 @@ import login from "./users/login"
 import JWT from "./jwt"
 import updateUser from "./users/update"
 import deleteUser from "./users/delete"
+import createPost from "./posts/create"
 
 export const typeDefs = [
   root,
@@ -14,4 +15,5 @@ export const typeDefs = [
   JWT,
   updateUser,
   deleteUser,
+  createPost,
 ]
