@@ -1,7 +1,8 @@
-/* istanbul ignore file */
-
 // Library
 import { ApolloServer } from "apollo-server"
+
+// Configuration Loader
+import "@config"
 
 // GraphQL
 import { typeDefs } from "@typedef/"

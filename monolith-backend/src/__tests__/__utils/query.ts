@@ -1,5 +1,3 @@
-/* istanbul ignore file */
-
 import gql from "graphql-tag"
 
 export const createQuery = gql`
