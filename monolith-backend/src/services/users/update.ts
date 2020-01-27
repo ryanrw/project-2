@@ -4,12 +4,17 @@ import createQuery, { database } from "@utils/db"
 
 // Type and Interface
 import { UpdateUserOption } from "users"
+import { encrypt } from "@utils/bcrypt"
 
 export async function updateUserInfo(
   updateUserid: string,
   option: UpdateUserOption
 ) {
-  const [_, data] = createQuery.convertObjectToAssignment(option)
+  const optionWithEncryptPassword = await encryptTextPassword(option)
+
+  const [_, data] = createQuery.convertObjectToAssignment(
+    optionWithEncryptPassword
+  )
 
   const useridParamNumber = `$${Object.keys(option).length + 1}`
 
@@ -19,7 +24,7 @@ export async function updateUserInfo(
     where: [`userid=${useridParamNumber}`],
   })
 
-  const extractOption: string[] = Object.values(option)
+  const extractOption: string[] = Object.values(optionWithEncryptPassword)
   const value = [...extractOption, updateUserid]
 
   try {
@@ -30,4 +35,16 @@ export async function updateUserInfo(
       code: `DatabaseError`,
     })
   }
+}
+
+async function encryptTextPassword(option: UpdateUserOption) {
+  if (!option.password) {
+    return option
+  }
+
+  const copyOption = { ...option }
+
+  copyOption.password = await encrypt(option.password)
+
+  return copyOption
 }
