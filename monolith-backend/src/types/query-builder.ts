@@ -1,7 +1,7 @@
 export interface SelectOption {
   data: string[]
   from: string[]
-  where: string[]
+  where?: string[]
 }
 
 export interface UpdateOption {

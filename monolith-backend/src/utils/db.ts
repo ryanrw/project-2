@@ -22,9 +22,14 @@ class QueryBuilder {
   select(option: SelectOption) {
     const data = this.addSpaceAndBackquote(option.data)
     const from = this.addSpaceAndBackquote(option.from)
-    const where = this.addSpaceAndBackquote(option.where)
 
-    return `SELECT ${data} FROM ${from} WHERE ${where}`
+    if (option.where) {
+      const where = this.addSpaceAndBackquote(option.where)
+
+      return `SELECT ${data} FROM ${from} WHERE ${where}`
+    }
+
+    return `SELECT ${data} FROM ${from}`
   }
 
   update(option: UpdateOption) {

@@ -9,7 +9,7 @@ export async function createPost(option: CreatePostOption) {
   const { userid, post } = option
 
   const createPostQuery = createQuery.insert(`posts`, [
-    `post_by`,
+    `postby`,
     `title`,
     `excerpt`,
     `content`,

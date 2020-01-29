@@ -8,6 +8,8 @@ import login from "./users/login"
 import updateUser from "./users/update"
 import deleteUser from "./users/delete"
 import createPost from "./posts/create"
+import getPost from "./posts/get"
+import getAllPost from "./posts/get-all"
 
 export const resolvers = merge(
   {},
@@ -16,5 +18,7 @@ export const resolvers = merge(
   login,
   updateUser,
   deleteUser,
-  createPost
+  createPost,
+  getPost,
+  getAllPost
 )
