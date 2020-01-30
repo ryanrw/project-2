@@ -26,3 +26,7 @@ export interface Resume {
     skill: Skill
   }[]
 }
+
+export interface ResumeResult {
+  metadata: Resume
+}

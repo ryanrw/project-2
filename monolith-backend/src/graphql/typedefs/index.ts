@@ -11,6 +11,8 @@ import getPost from "./posts/get"
 import updatePost from "./posts/update"
 import deletePost from "./posts/delete"
 import createResumeOnlyOne from "./resume/create"
+import Resume from "./resume"
+import getResume from "./resume/get"
 
 export const typeDefs = [
   root,
@@ -26,4 +28,6 @@ export const typeDefs = [
   updatePost,
   deletePost,
   createResumeOnlyOne,
+  Resume,
+  getResume,
 ]
