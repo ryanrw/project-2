@@ -11,7 +11,7 @@ import { Payload } from "jwt"
 import { CustomError } from "./error"
 
 export function generateJWT(payload: Payload) {
-  const option: jwt.SignOptions = { expiresIn: "1h" }
+  const option: jwt.SignOptions = { expiresIn: "12 days" }
   const newJWT = jwt.sign(payload, config.secret, option)
 
   return newJWT
