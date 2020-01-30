@@ -16,3 +16,14 @@ export interface GetPostOption {
   postid?: number
   title?: string
 }
+
+export interface UpdatePostOption {
+  title?: string
+  excerpt?: string
+  content?: string
+}
+
+export interface UpdatePostResolverOption {
+  postid: number
+  post: UpdatePostOption
+}
