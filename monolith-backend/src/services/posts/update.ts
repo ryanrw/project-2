@@ -3,7 +3,7 @@ import { UpdatePostOption } from "post"
 import { CustomError } from "@utils/error"
 
 export async function updatePost(postid: number, post: UpdatePostOption) {
-  const [_, setExpression] = createQuery.convertObjectToAssignment(post)
+  const [_, setExpression] = createQuery.objectToQuery(post)
   const postidParameter = Object.keys(post).length + 1
 
   const updatePostQuery = createQuery.update({

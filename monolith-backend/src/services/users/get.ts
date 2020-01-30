@@ -7,7 +7,7 @@ import { UserResultFromDatabase } from "users"
 import { UserInfo } from "users"
 
 export async function getUser(user: UserInfo) {
-  const [_, whereAssignment] = createQuery.convertObjectToAssignment(user)
+  const [_, whereAssignment] = createQuery.objectToQuery(user)
   const selectQuery = createQuery.select({
     data: [`userid`, `email`, `username`, `password`],
     from: [`users`],

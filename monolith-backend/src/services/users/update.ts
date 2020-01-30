@@ -12,9 +12,7 @@ export async function updateUserInfo(
 ) {
   const optionWithEncryptPassword = await encryptTextPassword(option)
 
-  const [_, data] = createQuery.convertObjectToAssignment(
-    optionWithEncryptPassword
-  )
+  const [_, data] = createQuery.objectToQuery(optionWithEncryptPassword)
 
   const useridParamNumber = `$${Object.keys(option).length + 1}`
 

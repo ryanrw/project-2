@@ -14,17 +14,17 @@ export const database = new Pool()
 class QueryBuilder {
   insert(table: string, column: string[]) {
     const parameter = this.getParametersFrom(column)
-    const prettiedData = this.addSpaceAndBackquote(column)
+    const data = this.addSpace(column)
 
-    return `INSERT INTO ${table}(${prettiedData}) VALUES (${parameter})`
+    return `INSERT INTO ${table}(${data}) VALUES (${parameter})`
   }
 
   select(option: SelectOption) {
-    const data = this.addSpaceAndBackquote(option.data)
-    const from = this.addSpaceAndBackquote(option.from)
+    const data = this.addSpace(option.data)
+    const from = this.addSpace(option.from)
 
     if (option.where) {
-      const where = this.addSpaceAndBackquote(option.where)
+      const where = this.addSpace(option.where)
 
       return `SELECT ${data} FROM ${from} WHERE ${where}`
     }
@@ -33,8 +33,8 @@ class QueryBuilder {
   }
 
   update(option: UpdateOption) {
-    const set = this.addSpaceAndBackquote(option.set)
-    const where = this.addSpaceAndBackquote(option.where)
+    const set = this.addSpace(option.set)
+    const where = this.addSpace(option.where)
 
     return `UPDATE ${option.table} SET ${set} WHERE ${where}`
   }
@@ -43,7 +43,7 @@ class QueryBuilder {
     return `DELETE FROM ${option.table} WHERE ${option.where}`
   }
 
-  convertObjectToAssignment(option: GenericObject) {
+  objectToQuery(option: GenericObject) {
     const keys = Object.keys(option)
 
     const assignmentQuery = keys.map(key => `${key}=${option[key]}`)
@@ -56,8 +56,7 @@ class QueryBuilder {
     return data.map((_, index) => `$${index + 1}`)
   }
 
-  // @todo change method's name
-  private addSpaceAndBackquote(data: string[]) {
+  private addSpace(data: string[]) {
     const withSpace = this.withSpace
     const withoutSpace = this.withoutSpace
 

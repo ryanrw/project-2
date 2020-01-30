@@ -6,7 +6,7 @@ import { CustomError } from "@utils/error"
 import { GetPostOption, Post } from "post"
 
 export async function getPost(post: GetPostOption) {
-  const [_, whereExpression] = createQuery.convertObjectToAssignment(post)
+  const [_, whereExpression] = createQuery.objectToQuery(post)
 
   const getPostQuery = createQuery.select({
     data: ["*"],
