@@ -27,3 +27,7 @@ export interface UpdatePostResolverOption {
   postid: number
   post: UpdatePostOption
 }
+
+export interface DeletePostResolverOption {
+  postid: number
+}

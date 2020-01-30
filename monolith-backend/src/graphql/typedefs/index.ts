@@ -9,6 +9,7 @@ import post from "./posts"
 import createPost from "./posts/create"
 import getPost from "./posts/get"
 import updatePost from "./posts/update"
+import deletePost from "./posts/delete"
 
 export const typeDefs = [
   root,
@@ -22,4 +23,5 @@ export const typeDefs = [
   post,
   getPost,
   updatePost,
+  deletePost,
 ]

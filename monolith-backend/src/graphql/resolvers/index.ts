@@ -11,6 +11,7 @@ import createPost from "./posts/create"
 import getPost from "./posts/get"
 import getAllPost from "./posts/get-all"
 import updatePost from "./posts/update"
+import deletePost from "./posts/delete"
 
 export const resolvers = merge(
   {},
@@ -22,5 +23,6 @@ export const resolvers = merge(
   createPost,
   getPost,
   getAllPost,
-  updatePost
+  updatePost,
+  deletePost
 )
