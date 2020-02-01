@@ -13,6 +13,7 @@ import deletePost from "./posts/delete"
 import createResumeOnlyOne from "./resume/create"
 import Resume from "./resume"
 import getResume from "./resume/get"
+import deleteResume from "./resume/delete"
 
 export const typeDefs = [
   root,
@@ -30,4 +31,5 @@ export const typeDefs = [
   createResumeOnlyOne,
   Resume,
   getResume,
+  deleteResume,
 ]

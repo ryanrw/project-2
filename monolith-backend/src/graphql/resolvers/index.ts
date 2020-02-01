@@ -14,6 +14,7 @@ import updatePost from "./posts/update"
 import deletePost from "./posts/delete"
 import createResumeOnlyOne from "./resume/create"
 import getResume from "./resume/get"
+import deleteResume from "./resume/delete"
 
 export const resolvers = merge(
   {},
@@ -28,5 +29,6 @@ export const resolvers = merge(
   updatePost,
   deletePost,
   createResumeOnlyOne,
-  getResume
+  getResume,
+  deleteResume
 )
