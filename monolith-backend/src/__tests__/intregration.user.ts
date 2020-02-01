@@ -6,7 +6,7 @@ import {
   loginUserQuery,
   updateUserQuery,
   deleteUserQuery,
-} from "./__utils/query"
+} from "./__utils/query.user"
 import { extractJWT } from "@utils/jwt"
 import { getUser } from "@service/users"
 import { compare } from "@utils/bcrypt"
