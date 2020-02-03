@@ -6,12 +6,16 @@ import { createPost } from "@service/posts/create"
 import { generateStatus } from "@service/status/generate"
 
 // Type and Interface
-import { Post } from "post"
+import { PostResolverParam } from "post"
 import { Payload } from "jwt"
 
 export default {
   Mutation: {
-    createPost: async (_parent: any, args: Post, context: Payload) => {
+    createPost: async (
+      _parent: any,
+      args: PostResolverParam,
+      context: Payload
+    ) => {
       if (!context.userid) {
         throw new AuthenticationError(`No jwt provide`)
       }

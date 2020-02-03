@@ -7,9 +7,15 @@ export interface Post {
   postat: string
 }
 
+export interface PostResolverParam {
+  title: string
+  excerpt: string
+  content: string
+}
+
 export interface CreatePostOption {
   userid: string
-  post: Post
+  post: PostResolverParam
 }
 
 export interface GetPostOption {
