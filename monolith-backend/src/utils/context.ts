@@ -6,19 +6,15 @@ import { ApolloError } from "apollo-server"
 import { extractJWT } from "./jwt"
 
 export function context({ req }: { req: Request }) {
-  try {
-    const authorization = req?.headers?.authorization || ""
+  const authorization = req?.headers?.authorization || ""
 
-    if (authorization) {
-      const jwt = authorization.replace("Bearer ", "")
+  if (authorization) {
+    const jwt = authorization.replace("Bearer ", "")
 
-      const payload = extractJWT(jwt)
+    const payload = extractJWT(jwt)
 
-      return payload
-    }
-
-    return ""
-  } catch (error) {
-    throw new ApolloError(error.message, error.code)
+    return payload
   }
+
+  return ""
 }
