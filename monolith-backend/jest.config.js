@@ -7,5 +7,8 @@ module.exports = {
     "^@typedef/(.*)": "<rootDir>/src/graphql/typedefs/$1",
     "^@resolver/(.*)": "<rootDir>/src/graphql/resolvers/$1",
   },
-  testPathIgnorePatterns: ["<rootDir>/src/__tests__/__utils"],
+  testPathIgnorePatterns: [
+    "<rootDir>/src/__tests__/__utils",
+    "<rootDir>/src/__tests__/__mocks__",
+  ],
 }
