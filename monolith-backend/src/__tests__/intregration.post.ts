@@ -16,6 +16,8 @@ import {
 import { extractJWT } from "@utils/jwt"
 import { database } from "@utils/db"
 
+jest.unmock("pg")
+
 // For local test environment
 afterAll(async () => {
   const query = `ALTER SEQUENCE posts_post_id_seq RESTART WITH 1`

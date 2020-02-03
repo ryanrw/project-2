@@ -11,6 +11,8 @@ import { extractJWT } from "@utils/jwt"
 import { getUser } from "@service/users"
 import { compare } from "@utils/bcrypt"
 
+jest.unmock("pg")
+
 const store = {
   jwt: "",
 }
