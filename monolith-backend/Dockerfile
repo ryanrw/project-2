@@ -1,8 +1,5 @@
 FROM node:alpine
 
-ENV HOSTNAME 0.0.0.0
-ENV PORT 4000
-
 WORKDIR /usr/app/
 
 RUN apk --no-cache add --virtual builds-deps build-base python
@@ -16,6 +13,4 @@ RUN yarn &&\
   yarn global add nodemon &&\
   yarn cache clean
 
-EXPOSE 4000
-
-CMD /wait && yarn start
+CMD /wait && nodemon -V --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts
