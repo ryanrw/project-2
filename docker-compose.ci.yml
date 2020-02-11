@@ -16,7 +16,7 @@ services:
   api:
     build: ./monolith-backend
     container_name: monolith_api
-    hostname: api
+    hostname: monolith_api
     restart: always
     volumes:
       - ./monolith-backend/src:/usr/app/src
@@ -30,12 +30,3 @@ services:
       PGDATABASE: blog
       PGPORT: 5432
       SECRET: randomserial
-
-  nginx:
-    image: nginx:alpine
-    restart: always
-    volumes:
-      - ./monolith-nginx/conf.d:/etc/nginx/conf.d
-      - ./monolith-nginx/access.log:/var/log/nginx/monolith-blog.access.log
-    ports:
-      - 80:80
