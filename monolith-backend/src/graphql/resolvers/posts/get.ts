@@ -1,4 +1,4 @@
-import { getPost } from "@service/posts/get"
+import { getPost } from "../../../services/posts/get"
 import { ApolloError } from "apollo-server"
 import { GetPostOption } from "post"
 

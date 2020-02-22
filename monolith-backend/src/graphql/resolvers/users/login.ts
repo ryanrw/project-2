@@ -2,10 +2,10 @@
 import { ApolloError } from "apollo-server"
 
 // Service
-import { validate } from "@service/users"
+import { validate } from "../../../services/users"
 
 // Utility and Helper
-import { generateJWT } from "@utils/jwt"
+import { generateJWT } from "../../../utils/jwt"
 
 // Type and Interface
 import { ValidateUserOption } from "users"

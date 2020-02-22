@@ -1,6 +1,5 @@
 // Library
 import { Request } from "express"
-import { ApolloError } from "apollo-server"
 
 // Local import
 import { extractJWT } from "./jwt"

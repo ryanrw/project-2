@@ -5,7 +5,7 @@ import {
   getResumeQuery,
   deleteResumeQuery,
 } from "./__utils/query.resume"
-import { data } from "@service/resume/data"
+import { data } from "../services/resume/data"
 import { Payload } from "jwt"
 
 jest.unmock("pg")

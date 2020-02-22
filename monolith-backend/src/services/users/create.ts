@@ -1,7 +1,7 @@
 // Utility and Helper
-import createQuery, { database } from "@utils/db"
-import { encrypt } from "@utils/bcrypt"
-import { CustomError } from "@utils/error"
+import createQuery, { database } from "../../utils/db"
+import { encrypt } from "../../utils/bcrypt"
+import { CustomError } from "../../utils/error"
 
 // Type and Interface
 import { User } from "users"

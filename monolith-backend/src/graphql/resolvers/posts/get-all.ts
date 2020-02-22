@@ -1,4 +1,4 @@
-import { getAllPost } from "@service/posts/get"
+import { getAllPost } from "../../../services/posts/get"
 import { ApolloError } from "apollo-server"
 
 export default {

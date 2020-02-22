@@ -2,8 +2,8 @@
 import { AuthenticationError, ApolloError } from "apollo-server"
 
 // Service
-import { deleteUser } from "@service/users"
-import { generateStatus } from "@service/status/generate"
+import { deleteUser } from "../../../services/users"
+import { generateStatus } from "../../../services/status/generate"
 
 // Type and Interface
 import { Payload } from "jwt"

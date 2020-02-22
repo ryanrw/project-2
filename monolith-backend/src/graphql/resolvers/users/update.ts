@@ -2,10 +2,13 @@
 import { ApolloError, AuthenticationError } from "apollo-server"
 
 // Service
-import { updateUserInfo, getUser as getNewUserInfo } from "@service/users"
+import {
+  updateUserInfo,
+  getUser as getNewUserInfo,
+} from "../../../services/users"
 
 // Utility and Helper
-import { generateJWT } from "@utils/jwt"
+import { generateJWT } from "../../../utils/jwt"
 
 // Type and Interface
 import { UpdateUserOption } from "users"

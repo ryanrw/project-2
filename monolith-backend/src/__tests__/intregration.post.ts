@@ -13,8 +13,8 @@ import {
   updatePostQuery,
   deletePostQuery,
 } from "./__utils/query.post"
-import { extractJWT } from "@utils/jwt"
-import { database } from "@utils/db"
+import { extractJWT } from "../utils/jwt"
+import { database } from "../utils/db"
 
 jest.unmock("pg")
 

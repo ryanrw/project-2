@@ -1,7 +1,7 @@
 import { Payload } from "jwt"
-import { createResume } from "@service/resume/create"
+import { createResume } from "../../../services/resume/create"
 import { ApolloError } from "apollo-server"
-import { generateStatus } from "@service/status/generate"
+import { generateStatus } from "../../../services/status/generate"
 
 export default {
   Mutation: {

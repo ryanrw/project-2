@@ -2,9 +2,9 @@
 import { ApolloServer } from "apollo-server"
 
 // GraphQL
-import { typeDefs } from "@typedef/"
-import { resolvers } from "@resolver/"
-import { context as defaultContext } from "@utils/context"
+import { typeDefs } from "../../graphql/typedefs"
+import { resolvers } from "../../graphql/resolvers"
+import { context as defaultContext } from "../../utils/context"
 
 export const constructTestServer = ({ context = defaultContext } = {}) => {
   const server = new ApolloServer({

@@ -1,6 +1,6 @@
 // Utility and Helper
-import { CustomError } from "@utils/error"
-import { compare } from "@utils/bcrypt"
+import { CustomError } from "../../utils/error"
+import { compare } from "../../utils/bcrypt"
 
 // Type and Interface
 import { ValidateUserOption } from "users"

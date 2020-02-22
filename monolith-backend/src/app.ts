@@ -5,14 +5,14 @@ require("module-alias/register")
 import { ApolloServer } from "apollo-server"
 
 // Configuration
-import config from "@config"
+import config from "./configs"
 
 // GraphQL
-import { typeDefs } from "@typedef/"
-import { resolvers } from "@resolver/"
+import { typeDefs } from "./graphql/typedefs"
+import { resolvers } from "./graphql/resolvers"
 
 // Utility and Helper
-import { context } from "@utils/context"
+import { context } from "./utils/context"
 
 const server = new ApolloServer({
   typeDefs,

@@ -1,9 +1,9 @@
-import { deletePost } from "@service/posts/delete"
+import { deletePost } from "../../../services/posts/delete"
 import { DeletePostResolverOption } from "post"
 import { Payload } from "jwt"
 import { AuthenticationError, ApolloError } from "apollo-server"
-import { checkPostOwner } from "@service/posts/authorization"
-import { generateStatus } from "@service/status/generate"
+import { checkPostOwner } from "../../../services/posts/authorization"
+import { generateStatus } from "../../../services/status/generate"
 
 export default {
   Mutation: {

@@ -7,9 +7,9 @@ import {
   updateUserQuery,
   deleteUserQuery,
 } from "./__utils/query.user"
-import { extractJWT } from "@utils/jwt"
-import { getUser } from "@service/users"
-import { compare } from "@utils/bcrypt"
+import { extractJWT } from "../utils/jwt"
+import { getUser } from "../services/users"
+import { compare } from "../utils/bcrypt"
 
 jest.unmock("pg")
 

@@ -1,6 +1,5 @@
-import { getPost } from "./get"
-import { database } from "@utils/db"
-import { CustomError } from "@utils/error"
+import { database } from "../../utils/db"
+import { CustomError } from "../../utils/error"
 import { Post } from "post"
 
 export async function checkPostOwner(postid: number, userid: string) {

@@ -2,8 +2,8 @@
 import { ApolloError } from "apollo-server"
 
 // Service
-import { createUser as create } from "@service/users/"
-import { generateStatus } from "@service/status/generate"
+import { createUser as create } from "../../../services/users/"
+import { generateStatus } from "../../../services/status/generate"
 
 // Type and Interface
 import { User } from "users"
