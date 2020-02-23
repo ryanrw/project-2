@@ -24,5 +24,10 @@ services:
       WAIT_HOSTS: database:5432
       PORT: 4200
       HOSTNAME: 0.0.0.0
+      PGHOST: database
+      PGPASSWORD: This1s_pr0jecT
+      PGDATABASE: blog
+      PGPORT: 5432
+      SECRET: RanD0mS3r1aL
     ports:
       - 4200:4200

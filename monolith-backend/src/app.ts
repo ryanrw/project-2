@@ -1,6 +1,3 @@
-// One time called module
-require("module-alias/register")
-
 // Library
 import { ApolloServer } from "apollo-server"
 
