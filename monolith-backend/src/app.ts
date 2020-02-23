@@ -15,6 +15,7 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   context,
+  tracing: true,
 })
 
 export function startServer() {
