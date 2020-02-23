@@ -24,6 +24,7 @@ services:
       WAIT_HOSTS: database:5432
       PORT: 4200
       HOSTNAME: 0.0.0.0
+      PGUSER: postgres
       PGHOST: database
       PGPASSWORD: This1s_pr0jecT
       PGDATABASE: blog
