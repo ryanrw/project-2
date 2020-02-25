@@ -19,10 +19,7 @@ jobs:
       - name: add typescipt-cli
         run: yarn global add typescript
       - name: build production
-        run: cd monolith-backend/ &&\
-          yarn install &&\
-          yarn build &&\
-          cd ..
+        run: cd monolith-backend/ && yarn install && yarn build && cd ..
       - name: build docker compose
         run: docker-compose -f docker-compose.ci.yml up -d
       - name: list docker process
