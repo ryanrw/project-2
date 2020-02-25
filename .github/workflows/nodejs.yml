@@ -20,7 +20,7 @@ jobs:
         run: yarn global add typescript
       - name: build production
         run: cd monolith-backend/ &&\
-          yarn &&\
+          yarn install &&\
           yarn build &&\
           cd ..
       - name: build docker compose
