@@ -26,3 +26,5 @@ jobs:
         run: docker exec monolith_api printenv
       - name: list all file in the container
         run: docker exec monolith_api ls -la
+      - name: list all file in the container
+        run: docker exec monolith_api ls -la src/
