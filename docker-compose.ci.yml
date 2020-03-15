@@ -4,7 +4,7 @@ services:
   database:
     build:
       context: ./monolith-db
-      dockerfile: ./monolith-db/CI.Dockerfile
+      dockerfile: Dockerfile-CI
     container_name: monolith_database
     hostname: database
     restart: always
