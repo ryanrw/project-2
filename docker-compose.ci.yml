@@ -2,9 +2,7 @@ version: "3.7"
 
 services:
   database:
-    build:
-      context: ./monolith-db
-      dockerfile: Dockerfile-CI
+    build: ./monolith-db/
     container_name: monolith_database
     hostname: database
     restart: always
@@ -16,7 +14,9 @@ services:
       - 2345:5432
 
   api:
-    build: ./monolith-backend
+    build:
+      context: ./monolith-backend
+      dockerfile: Dockerfile-CI
     container_name: monolith_api
     hostname: monolith_api
     restart: always
